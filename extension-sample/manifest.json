@@ -1,0 +1,13 @@
+{
+  "name": "import problem",
+  "version": "1.0",
+  "description": "content script import problem description",
+  "manifest_version": 3,
+  "author": "Nathan Krasney",
+  "content_scripts": [
+    {
+      "js": ["content-script/content.js"],
+      "matches": ["https://example.com/*"]
+    }
+  ]
+}
