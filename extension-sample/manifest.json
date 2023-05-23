@@ -4,10 +4,24 @@
   "description": "content script import problem description",
   "manifest_version": 3,
   "author": "Nathan Krasney",
+  "action": {},
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
   "content_scripts": [
     {
-      "js": ["content-script/content.js"],
+      "js": ["content/content.js"],
       "matches": ["https://example.com/*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://example.com/*"],
+      "resources": [
+        "content/content_main.js",
+        "content/utils.js",
+        "assets/lion.jpg"
+      ]
     }
   ]
 }
