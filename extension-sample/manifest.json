@@ -18,8 +18,7 @@
     {
       "matches": ["https://example.com/*"],
       "resources": [
-        "content/utils1.js",
-        "content/utils2.js",
+        "content/utils*.js",
         "assets/lion.jpg"
       ]
     }

@@ -1,16 +1,15 @@
 (async () => {
-  // --- dynamic load utils1
-  const urlUtils1 = chrome.runtime.getURL("content/utils1.js");
-  const { sum } = await import(urlUtils1);
-  console.log(`sum(1,2) : ${sum(1, 2)}`);
+  const urlUtilsEntryPoint = chrome.runtime.getURL("content/utils-entry-point.js");
+  await import(urlUtilsEntryPoint);
 
-  // --- dynamic load utils2
-  const urlUtils2 = chrome.runtime.getURL("content/utils2.js");
-  const { mul } = await import(urlUtils2);
-  console.log(`mul(1,2) : ${mul(1, 2)}`);
+  // --- add p to content
+  const pElem= document.createElement("imgElem");
+  pElem.innerText = 'check the console for sum and mul used from utils1,utils2';
+  document.body.appendChild(pElem);
 
-  // --- add img to content
-  const img = document.createElement("img");
-  img.src = chrome.runtime.getURL("assets/lion.jpg");
-  document.body.appendChild(img);
+
+  // --- add img to content simply to experiment with web_accessible_resources
+  const imgElem = document.createElement("img");
+  imgElem.src = chrome.runtime.getURL("assets/lion.jpg");
+  document.body.appendChild(imgElem);
 })();
