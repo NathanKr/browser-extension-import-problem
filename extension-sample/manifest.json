@@ -18,8 +18,8 @@
     {
       "matches": ["https://example.com/*"],
       "resources": [
-        "content/content_main.js",
-        "content/utils.js",
+        "content/utils1.js",
+        "content/utils2.js",
         "assets/lion.jpg"
       ]
     }
